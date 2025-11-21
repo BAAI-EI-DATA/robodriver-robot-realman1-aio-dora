@@ -30,8 +30,8 @@ class RealManFollowerDoraRobot(Robot):
         self.use_videos = self.config.use_videos
         self.microphones = self.config.microphones
 
-        # self.follower_arms = {}
-        # self.follower_arms['main_follower'] = self.config.follower_arms["main"]
+        self.follower_arms = {}
+        self.follower_arms['main_follower'] = self.config.follower_arms["main"]
         self.motors = config.motors
 
         self.cameras = make_cameras_from_configs(self.config.cameras)

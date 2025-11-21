@@ -69,9 +69,9 @@ nodes:
       image_top: camera_top/image
       image_top_dep: camera_wrist/image_depth
       camera_left_wrist: camera_left_wrist/image
-      camera_left_wrist: camera_left_wrist/image_depth
+      camera_left_wrist_dep: camera_left_wrist/image_depth
       camera_right_wrist: camera_right_wrist/image
-      camera_right_wrist: camera_right_wrist/image_depth
+      camera_right_wrist_dep: camera_right_wrist/image_depth
       follower_joint_left: arm_realman_follower_left/joint
       follower_joint_right: arm_realman_follower_right/joint
     outputs:
