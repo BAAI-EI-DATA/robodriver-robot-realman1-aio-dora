@@ -98,19 +98,8 @@ class RealManFollowerDoraRobot(Robot):
     @property
     def _motors_ft(self) -> dict:
         action_names = self.get_motor_names(self.motors)
-        state_names = self.get_motor_names(self.motors)
-        return {
-            "action": {
-                "dtype": "float32",
-                "shape": (len(action_names),),
-                "names": action_names,
-            },
-            "observation.state": {
-                "dtype": "float32",
-                "shape": (len(state_names),),
-                "names": f"observation.state.{state_names,}"
-            },
-        }
+        return {f"{motor}.pos": float for motor in action_names}
+            
     
     @property
     def is_connected(self) -> bool:
@@ -342,10 +331,14 @@ class RealManFollowerDoraRobot(Robot):
             images[name] = torch.from_numpy(images[name])
             self.logs[f"read_camera_{name}_dt_s"] = time.perf_counter() - now
 
-        # Populate output dictionnaries and format to pytorch
+
         obs_dict, action_dict = {}, {}
-        obs_dict["observation.state"] = state
-        action_dict["action"] = action
+        for name, value in zip(self._motors_ft.keys(), state):
+            obs_dict[f"{name}"] = value
+            
+        for name, value in zip(self._motors_ft.keys(), action):
+            action_dict[f"{name}"] = value
+
         for name in self.cameras:
             obs_dict[f"observation.images.{name}"] = images[name]
             
@@ -406,7 +399,7 @@ class RealManFollowerDoraRobot(Robot):
         # position = np.concatenate([goal_joint_numpy, goal_gripper_numpy], axis=0)
 
         # logger.debug(f"action: {action}, goal_joint:{goal_joint}, goal_joint_numpy:{goal_joint_numpy}")
-        self.robot_dora_node.dora_send(f"action_joint", goal_joint_numpy)
+        # self.robot_dora_node.dora_send(f"action_joint", goal_joint_numpy) # 暂时不能用
         
         return {f"{motor}.pos": val for motor, val in action.items()}
 
