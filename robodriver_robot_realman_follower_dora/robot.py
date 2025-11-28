@@ -399,7 +399,7 @@ class RealManFollowerDoraRobot(Robot):
         # position = np.concatenate([goal_joint_numpy, goal_gripper_numpy], axis=0)
 
         # logger.debug(f"action: {action}, goal_joint:{goal_joint}, goal_joint_numpy:{goal_joint_numpy}")
-        #self.robot_dora_node.dora_send(f"action_joint", goal_joint_numpy) # 暂时注释
+        self.robot_dora_node.dora_send(f"action_joint", goal_joint_numpy) 
         
         return {f"{motor}.pos": val for motor, val in action.items()}
 

@@ -43,7 +43,7 @@ nodes:
     build: pip install -e nodes/dora_arm_realman
     inputs:
       get_joint: dora/timer/millis/33
-      action_joint_ctrl: realman_follower_dora/action_joint
+      action_joint: realman_follower_dora/action_joint
     outputs:
       - joint
     env:
@@ -58,7 +58,7 @@ nodes:
     build: pip install -e nodes/dora_arm_realman
     inputs:
       get_joint: dora/timer/millis/33
-      action_joint_ctrl: realman_follower_dora/action_joint
+      action_joint: realman_follower_dora/action_joint
     outputs:
       - joint
     env:
