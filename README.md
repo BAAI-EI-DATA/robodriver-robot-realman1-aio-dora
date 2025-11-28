@@ -17,6 +17,10 @@ Install dependencies
 ```
 uv pip install -e .
 ```
-
+Install the project to Robodriver
 ```
+cd /path/to/your/RoboDriver
+source .venv/bin/activate
+cd robodriver-robot-realman-follower-dora
+uv pip install -e .
 ```
