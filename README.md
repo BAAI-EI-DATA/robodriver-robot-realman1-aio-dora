@@ -60,3 +60,9 @@ source .venv/bin/activate
 python robodriver/scripts/run.py \
   --robot.type=realman_follower_dora 
 ```
+
+##  
+- When the  replay cannot play the video stream using rerun \
+*Open RoboDriver/robodriver/core/coordinator.py \
+Change the parameter mode="distant" of the visual_worker function to mode="local"* 
+  
