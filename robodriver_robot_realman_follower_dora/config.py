@@ -40,8 +40,13 @@ class RealManFollowerDoraRobotConfig(RobotConfig):
                 "joint_5": Motor(5, "realman", norm_mode_body),
                 "joint_6": Motor(6, "realman", norm_mode_body),
                 "joint_7": Motor(7, "realman", norm_mode_body),
-                "gripper": Motor(8, "realman", MotorNormMode.RANGE_0_100),# 范围需要修改
-
+                "gripper": Motor(8, "realman", norm_mode_body),
+                "pose_x":  Motor(9, "realman", norm_mode_body),
+                "pose_y":  Motor(10, "realman", norm_mode_body),
+                "pose_z":  Motor(11, "realman", norm_mode_body),
+                "pose_rx":  Motor(12, "realman", norm_mode_body),
+                "pose_ry":  Motor(13, "realman", norm_mode_body),
+                "pose_rz":  Motor(14, "realman", norm_mode_body),
             },
             "right_arm": {
                 "joint_1": Motor(1, "realman", norm_mode_body),
@@ -51,7 +56,13 @@ class RealManFollowerDoraRobotConfig(RobotConfig):
                 "joint_5": Motor(5, "realman", norm_mode_body),
                 "joint_6": Motor(6, "realman", norm_mode_body),
                 "joint_7": Motor(7, "realman", norm_mode_body),
-                "gripper": Motor(8, "realman", MotorNormMode.RANGE_0_100),# 范围需要修改
+                "gripper": Motor(8, "realman", norm_mode_body),
+                "pose_x":  Motor(9, "realman", norm_mode_body),
+                "pose_y":  Motor(10, "realman", norm_mode_body),
+                "pose_z":  Motor(11, "realman", norm_mode_body),
+                "pose_rx":  Motor(12, "realman", norm_mode_body),
+                "pose_ry":  Motor(13, "realman", norm_mode_body),
+                "pose_rz":  Motor(14, "realman", norm_mode_body),                
             }
 
         }
@@ -65,7 +76,7 @@ class RealManFollowerDoraRobotConfig(RobotConfig):
                 width=640,
                 height=480,
             ),
-            # "image_top_dep": OpenCVCameraConfig(
+            # "image_top_depth": OpenCVCameraConfig(
             #     index_or_path=2,
             #     fps=30,
             #     width=640,
@@ -78,7 +89,7 @@ class RealManFollowerDoraRobotConfig(RobotConfig):
                 height=480,
             ),
             
-            # "image_left_wrist_dep": OpenCVCameraConfig(
+            # "image_left_wrist_depth": OpenCVCameraConfig(
             #     index_or_path=4,
             #     fps=30,
             #     width=640,
@@ -90,7 +101,7 @@ class RealManFollowerDoraRobotConfig(RobotConfig):
                 width=640,
                 height=480,
             ),
-            # "image_right_wrist_dep": OpenCVCameraConfig(
+            # "image_right_wrist_depth": OpenCVCameraConfig(
             #     index_or_path=6,
             #     fps=30,
             #     width=640,

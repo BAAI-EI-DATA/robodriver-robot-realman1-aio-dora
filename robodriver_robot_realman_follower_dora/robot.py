@@ -283,10 +283,10 @@ class RealManFollowerDoraRobot(Robot):
             for match_name in self.robot_dora_node.recv_joint:
                 if name in match_name:
                     now = time.perf_counter()
-                    byte_array = np.zeros(8, dtype=np.float32)
+                    byte_array = np.zeros(14, dtype=np.float32)
                     pose_read = self.robot_dora_node.recv_joint[match_name]
 
-                    byte_array[:8] = pose_read[:]
+                    byte_array[:14] = pose_read[:]
                     byte_array = np.round(byte_array, 3)
                     
                     follower_joint[name] = torch.from_numpy(byte_array)

@@ -72,11 +72,11 @@ nodes:
     path: dynamic
     inputs:
       image_top: camera_top/image
-      # image_top_dep: camera_top/image_depth
+      # image_top_depth: camera_top/image_depth
       image_left_wrist: camera_left_wrist/image
-      # image_left_wrist_dep: camera_left_wrist/image_depth
+      # image_left_wrist_depth: camera_left_wrist/image_depth
       image_right_wrist: camera_right_wrist/image
-      # image_right_wrist_dep: camera_right_wrist/image_depth
+      # image_right_wrist_depth: camera_right_wrist/image_depth
       follower_joint_left_arm: arm_realman_follower_left/joint
       follower_joint_right_arm: arm_realman_follower_right/joint
     outputs:
