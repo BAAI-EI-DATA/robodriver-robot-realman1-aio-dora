@@ -61,15 +61,13 @@ python robodriver/scripts/run.py \
   --robot.type=realman1_aio_dora 
 ```
 
-##  
-- When the  replay cannot play the video stream using rerun \
-*Open RoboDriver/robodriver/core/coordinator.py \
-Change the parameter mode="distant" of the visual_worker function to mode="local"* 
+## Bug Fixes
+1. Rerun video replay failure:  
+   Edit `RoboDriver/robodriver/core/coordinator.py`, change `visual_worker(mode="distant")` to `mode="local"`.
 
-- When python robodriver/scripts/run.py --robot.type = realman1 _ aio _dora will give an error when it is started. \
-like: cv2.error: OpenCV(4.11.0) /io/opencv/modules/highgui/src/window.cpp:1301: error: (-2:Unspecified error) The function is not implemented. Rebuild the library with Windows, GTK+ 2.x or Cocoa support. If you are on Ubuntu or Debian, install libgtk2.0-dev and pkg-config, then re-run cmake or configure script in function 'cvShowImage'
+2. OpenCV cvShowImage error on launch (`python robodriver/scripts/run.py --robot.type=realman1_aio_dora`):  
+   Comment out `cv2.imshow(key, img)` and `cv2.waitKey(1)` in `robodriver/scripts/run.py`.
 
-*Comment out the lines cv2.imshow(key, img) and cv2.waitKey(1) in the file robodriver/scripts/run.py.*
 
 ## Data Information
 RealMan robotic arm data is transmitted by the Dora node. Each robotic arm node sends **14-dimensional information** with the following composition:
