@@ -76,16 +76,3 @@ RealMan robotic arm data is transmitted by the Dora node. Each robotic arm node 
 - Gripper state: Gripper opening/closing degree 
 - End-effector pose: End Euler angles (3 dimensions, representing rotation around X/Y/Z axes) \
 **When you need to modify the data information, you can modify dataflow.yml and config.py**
-## ⚠️ Important Warning
-If you modify any files in the `dora/nodes/dora_arm_realman` directory (e.g., core logic for the robotic arm node), **please follow these steps to ensure changes take effect**:
-1. Uninstall the old package to clear cached dependencies:
-   ```
-   source /path/to/Robodriver/.venv/bin/activate
-   uv pip uninstall  robodriver-robot-realman1-aio-dora
-   ```
-2. install robodriver-robot-realman1-aio-dora
-   ```
-   source /path/to/Robodriver/.venv/bin/activate
-   cd path/to/your/robodriver-realman1/uv pip install -e .
-   ```
-
